@@ -1,0 +1,93 @@
+:root {
+  --light-blue: #52A0E0;
+  --terra-cotta: #e0525b;
+  --light-green: #52E092;
+  --whitesmoke: whitesmoke;
+}
+
+.bg-light-blue {
+  background-color: var(--light-blue);
+  color: var(--whitesmoke);
+}
+
+.bg-terra-cotta {
+  background-color: var(--terra-cotta);
+  color: black;
+}
+
+.bg-light-green {
+  background-color: var(--light-green);
+  color: var(--whitesmoke);
+}
+
+.bg-whitesmoke {
+  background-color: var(--whitesmoke);
+  color: black;
+}
+
+.background-inherit {
+  background-color: inherit !important;
+}
+
+.text-light-blue {
+  color: var(--light-blue) !important;
+}
+
+.text-terra-cotta {
+  color: var(--terra-cotta) !important;
+}
+
+.text-light-green {
+  color: var(--light-green) !important;
+}
+
+.text-whitesmoke {
+  color: var(--whitesmoke) !important;
+}
+
+.text-inherit {
+  color: inherit !important;
+}
+
+.border-light-blue {
+  border-color: var(--light-blue) !important;
+}
+
+.border-terra-cotta {
+  border-color: var(--terra-cotta) !important;
+}
+
+.border-light-green {
+  border-color: var(--light-green) !important;
+}
+
+.border-whitesmoke {
+  border-color: var(--whitesmoke) !important;
+}
+
+.border-inherit {
+  border-color: inherit !important;
+}
+
+.transition {
+  transition: 0.5s;
+}
+
+.transition-l {
+  transition: 0.75s;
+}
+
+body {
+  background-color: whitesmoke;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 400;
+  margin: 0;
+}
+
+#filter {
+  z-index: 1050;
+  background-color: rgba(255, 255, 255, 0.7);
+}
