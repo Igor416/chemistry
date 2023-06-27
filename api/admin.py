@@ -4,7 +4,7 @@ from .models import Element, ElementCountInIon, ElementCountInCovalentSubstance,
 @admin.register(Element)
 class ElementAdmin(admin.ModelAdmin):
     ordering = ('atomic_number',)
-    list_filter = ('type', 'family')
+    list_filter = ('type', 'family', 'block')
 
 class ElementCountInIonInline(admin.TabularInline):
     model = ElementCountInIon

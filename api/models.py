@@ -21,13 +21,15 @@ def to_choices(*args):
 class Element(models.Model):
     atomic_number = models.SmallIntegerField('Atomic Number', primary_key=True, unique=True)
     symbol = models.CharField('Symbol', max_length=2, unique=True)
-    type = models.CharField('Metal / Nonmetal / Noble Gas', choices=to_choices('Metal', 'Nonmetal', 'Noble Gas'), max_length=9)
+    type = models.CharField('Type', choices=to_choices('Metal', 'Nonmetal', 'Noble Gas'), max_length=9)
     family = models.CharField('Family', choices=to_choices(*families.keys()), max_length=21)
     name = models.CharField('Name', max_length=16, unique=True)
     group = models.CharField('Group', max_length=2)
     period = models.CharField('Period', max_length=1)
     mass = models.DecimalField('Mass', max_digits=6, decimal_places=3)
-    oxidations = models.CharField('Oxidations', validators=[int_list_validator], max_length=24)
+    oxidations = models.CharField('Oxidations', validators=[int_list_validator], max_length=32)
+    block = models.CharField('Block', choices=to_choices('s', 'p', 'd', 'f'), max_length=1)
+    configuration = models.CharField('Configuration', max_length=128)
     
     def __str__(self):
         return f'{self.atomic_number}. {self.name} ({self.symbol})'
