@@ -20,7 +20,7 @@ export default function Menu({showTable}: MenuProps) {
   }, [])
 
   return (
-    <div className="d-flex justify-content-between align-items-center w-100 bg-light-blue h3 p-4">
+    <div className='d-flex justify-content-between align-items-center w-100 bg-light-blue h3 p-4'>
       <div className='d-flex flex-nowrap align-items-center h1'>
         <FontAwesomeIcon className='transition-l' icon={faFlask} />
         <span className='ms-2'>Chemist.io</span>

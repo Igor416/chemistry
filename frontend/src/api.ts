@@ -1,4 +1,4 @@
-import { Element, Klass } from "./JSONTypes"
+import { Element, Klass } from './JSONTypes'
 import Cookies from 'js-cookie';
 
 export function getElements(): Promise<Element[]> {
@@ -7,8 +7,8 @@ export function getElements(): Promise<Element[]> {
 	return sendGetRequest<Element[]>(url);
 }
 
-export function getElement(symbol: string): Promise<Element> {
-	const url = 'elements/' + symbol + '/';
+export function getElement(atomic_number: number): Promise<Element> {
+	const url = 'elements/' + atomic_number + '/';
 
 	return sendGetRequest<Element>(url);
 }
@@ -21,7 +21,7 @@ export function getKlasses(): Promise<Klass[]> {
 
 async function sendPostRequest<T, R>(url: string, body: T): Promise<R> {
 	const options = {
-		method: "POST",
+		method: 'POST',
 		headers: {
 			'X-CSRFToken': Cookies.get('csrftoken') as string,
 			'Content-Type': 'application/json'

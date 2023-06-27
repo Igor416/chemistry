@@ -1,5 +1,5 @@
 import { Link as RouterLink } from 'react-router-dom';
-import Hoverable from "./Hoverable";
+import Hoverable from './Hoverable';
 
 interface LinkProps {
   to: string;
