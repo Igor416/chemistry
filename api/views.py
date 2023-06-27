@@ -8,8 +8,8 @@ class ElementsListView(ListAPIView):
     queryset = Element.objects.all()
 
 class ElementRetrieveView(RetrieveAPIView):
-    lookup_url_kwarg = 'symbol'
-    lookup_field = 'symbol'
+    lookup_url_kwarg = 'atomic_number'
+    lookup_field = 'atomic_number'
     serializer_class = ElementSerializer
     queryset = Element.objects.all()
 
