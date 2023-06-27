@@ -1,5 +1,17 @@
-.hidden {
-  transform: translate(100vw, -100vh);
+.hidden-start {
+  transform: translateX(-100vw);
+}
+
+.hidden-end {
+  transform: translateX(100vw);
+}
+
+.hidden-top {
+  transform: translateY(-100vh);
+}
+
+.hidden-bottom {
+  transform: translateY(100vh);
 }
 
 .shown {
