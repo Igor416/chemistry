@@ -1,20 +1,23 @@
 export interface Element {
-  "atomic_number": number,
-  "symbol": string,
-  "type": string,
-  "family": string,
-  "name": string,
-  "group": number,
-  "period": number,
-  "mass": number,
-  "oxidations": string[];
-  "color": string;
+  atomic_number: number,
+  symbol: string,
+  type: string,
+  family: string,
+  name: string,
+  group: number,
+  period: number,
+  mass: number,
+  oxidations: string[],
+  block: string,
+  configuration: string[],
+  electrons: number[],
+  color: string
 }
 
 export interface Klass {
-  "name": string,
-  "description": string,
-  "is_organic": boolean,
-  "reacts_with": string[],
-  "unique_reactions": number[]
+  name: string,
+  description: string,
+  is_organic: boolean,
+  reacts_with: string[],
+  unique_reactions: number[]
 }
