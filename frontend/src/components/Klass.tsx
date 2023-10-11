@@ -20,6 +20,7 @@ export default function Klass({editable}: KlassProps) {
     reactsWith: [],
     uniqueReactions: [],
     image: '',
+    suffix: '',
     article: ''
   })
 

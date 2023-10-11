@@ -42999,6 +42999,7 @@ function Klass({ editable }) {
         reactsWith: [],
         uniqueReactions: [],
         image: '',
+        suffix: '',
         article: ''
     });
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
