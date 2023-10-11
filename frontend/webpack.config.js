@@ -7,7 +7,7 @@ module.exports = {
 	},
 	devtool: 'source-map',
 	output: {
-		path: path.resolve(__dirname, './static/js'),
+    path: path.resolve(__dirname, '../static/js'),
 		filename: '[name].js',
 	},
 	module: {
