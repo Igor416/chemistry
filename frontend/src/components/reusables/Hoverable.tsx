@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 interface HoverableProps {
-  text: any,
+  children: ReactNode | ReactNode[]
   color: string,
   isActive?: boolean
 }
 
-export default function Hoverable({text, color, isActive}: HoverableProps) {
+export default function Hoverable({children, color, isActive = false}: HoverableProps) {
   const [active, setActive] = useState(isActive as boolean)
 
-  return <div onMouseOver={() => setActive(true)} onMouseOut={() => setActive(false)} className='d-flex flex-column w-100'>
-    <span>{text}</span>
+  useEffect(() => {
+    setActive(isActive)
+  }, [isActive])
+
+  return <div onMouseOver={() => setActive(true)} onMouseOut={() => setActive(isActive || false)} className={'d-flex flex-column w-100 text-' + color}>
+    {children}
     <div style={{width: active ? '100%' : '0', height: '1px'}} className={`transition bg-` + color}></div>
   </div>
 }

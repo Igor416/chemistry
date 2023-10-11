@@ -1,10 +1,11 @@
 from django.contrib import admin
-from .models import Element, ElementCountInIon, ElementCountInCovalentSubstance, SimpleIon, ComplexIon, Klass, CovalentSubstance, IonicSubstance, Reaction
+
+from .models import Element, ElementCountInIon, ElementCountInCovalentSubstance, Ion, Klass, CovalentSubstance, IonicSubstance, Reaction
 
 @admin.register(Element)
 class ElementAdmin(admin.ModelAdmin):
     ordering = ('atomic_number',)
-    list_filter = ('type', 'family', 'block')
+    list_filter = ('type', 'family', 'block', 'period', 'group')
 
 class ElementCountInIonInline(admin.TabularInline):
     model = ElementCountInIon
@@ -14,9 +15,11 @@ class ElementCountInCovalentSubstanceInline(admin.TabularInline):
     model = ElementCountInCovalentSubstance
     extra = 2
 
-@admin.register(ComplexIon)
-class ComplexIonAdmin(admin.ModelAdmin):
+@admin.register(Ion)
+class IonAdmin(admin.ModelAdmin):
     inlines = (ElementCountInIonInline,)
+    exclude = ('positive',)
+    list_filter = ('main_element_count__element', 'main_element_count__oxidation')
 
 @admin.register(Klass)
 class KlassAdmin(admin.ModelAdmin):
@@ -27,4 +30,4 @@ class KlassAdmin(admin.ModelAdmin):
 class CovalentSubstanceAdmin(admin.ModelAdmin):
     inlines = (ElementCountInCovalentSubstanceInline,)
 
-admin.site.register((SimpleIon, IonicSubstance, Reaction))
+admin.site.register((ElementCountInIon, ElementCountInCovalentSubstance, IonicSubstance, Reaction))

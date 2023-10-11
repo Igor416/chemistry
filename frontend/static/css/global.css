@@ -59,17 +59,27 @@ i:hover, svg:hover {
   transform: rotate(360deg);
 }
 
-.dropdwn .dropdwn-content {
-  transform-origin: top;
-  transform: rotateX(90deg);
+.formula {
+  display: inline-block;
 }
 
-.dropdwn:hover .dropdwn-content {
-  transform: rotateX(0deg);
+.formula sup, .formula sub {
+  position: relative;
+  display: block;
+  font-size: .5em;
+  line-height: 1.2;
+}
+
+.formula sub {
+  top: .3em;
 }
 
 .underlined {
   text-decoration: none !important;
   border: none !important;
   border-bottom: 1px solid black;
+}
+
+.outline-0 {
+  outline: 0 !important;
 }
